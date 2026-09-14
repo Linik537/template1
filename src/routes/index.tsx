@@ -135,7 +135,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto -mt-10 max-w-7xl px-4 sm:px-6">
+      <section className="relative z-10 mx-auto max-w-7xl px-4 pt-10 sm:px-6 sm:pt-12">
         <div className="braza-panel grid overflow-hidden rounded-2xl shadow-2xl sm:grid-cols-3">
           {[
             {
