@@ -136,7 +136,7 @@ function Estoque() {
             />
             <button
               type="submit"
-              className="rounded-xl bg-braza px-6 text-white"
+              className="rounded-xl bg-secondary px-6 text-white transition hover:brightness-110"
               aria-label="Buscar"
             >
               <Search className="h-4 w-4" />

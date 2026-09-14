@@ -46,7 +46,7 @@ export function CarCard({ carro, compact = false }: { carro: Carro; compact?: bo
       </div>
 
       <div
-        className={`relative flex flex-1 flex-col rounded-b-2xl border border-t-0 border-white/10 bg-[#0b0d12] transition before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-gradient-to-r before:from-primary before:via-white/30 before:to-secondary group-hover:border-secondary/35 ${compact ? "gap-2 px-3 pb-3 pt-3 sm:gap-3 sm:px-4 sm:pb-4 sm:pt-4" : "gap-3 px-5 pb-5 pt-4"}`}
+        className={`relative flex flex-1 flex-col rounded-b-2xl border border-t-0 border-white/10 bg-[#0b0d12] transition before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-white group-hover:border-secondary/35 ${compact ? "gap-2 px-3 pb-3 pt-3 sm:gap-3 sm:px-4 sm:pb-4 sm:pt-4" : "gap-3 px-5 pb-5 pt-4"}`}
       >
         <h3
           className={`font-oswald font-semibold leading-none tracking-[0.02em] text-foreground ${compact ? "text-[18px] sm:text-[22px]" : "text-[22px]"}`}
