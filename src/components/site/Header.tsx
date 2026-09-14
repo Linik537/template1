@@ -28,18 +28,15 @@ export function Header() {
             className="group flex items-center gap-3"
             aria-label={`${SITE.name} : página inicial`}
           >
-            <img
-              src={logo}
-              alt={`Logo ${SITE.name}`}
-              className="h-16 w-16 rounded-xl object-contain transition duration-300 group-hover:scale-105 sm:h-[74px] sm:w-[74px]"
-            />
-            <span className="hidden flex-col leading-none sm:flex">
-              <span className="font-oswald text-[22px] font-bold uppercase tracking-[0.12em] text-white">
-                Braza
-              </span>
-              <span className="mt-1 text-[10px] font-bold uppercase tracking-[0.34em] text-secondary">
-                Veículos
-              </span>
+            <span className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-xl sm:h-[78px] sm:w-[78px]">
+              <img
+                src={logo}
+                alt={`Logo ${SITE.name}`}
+                className="h-full w-full scale-[1.55] object-contain transition duration-300 group-hover:scale-[1.62]"
+              />
+            </span>
+            <span className="hidden whitespace-nowrap font-oswald text-[22px] font-bold uppercase tracking-[0.1em] text-white sm:inline">
+              Braza Veículos
             </span>
           </Link>
 
