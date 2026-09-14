@@ -20,7 +20,7 @@ export function Header() {
 
   return (
     <div className="sticky top-0 z-50">
-      <header className="border-b border-white/10 bg-[#090a0d]/90 shadow-[0_12px_40px_rgba(0,0,0,0.35)] backdrop-blur-2xl">
+      <header className="border-b border-white/10 bg-background/75 shadow-[0_12px_40px_rgba(0,0,0,0.35)] backdrop-blur-xl">
         <div className="mx-auto flex h-[76px] max-w-7xl items-center gap-3 px-4 sm:h-[88px] sm:px-6">
           <Link
             to="/"
@@ -88,7 +88,7 @@ export function Header() {
         </div>
 
         {open && (
-          <nav className="border-t border-white/10 bg-[#090a0d]/95 px-4 py-3 backdrop-blur-xl md:hidden">
+          <nav className="border-t border-white/10 bg-background/85 px-4 py-3 backdrop-blur-xl md:hidden">
             {nav.map((n) => (
               <Link
                 key={n.to}
