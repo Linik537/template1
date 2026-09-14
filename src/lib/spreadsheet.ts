@@ -25,7 +25,7 @@ export type ResultadoImportacao = {
 
 const aliases: Record<keyof ImportacaoCarro, string[]> = {
   marca: ["marca", "fabricante", "brand"],
-  modelo: ["modelo", "model", "veiculo", "veículo", "carro"],
+  modelo: ["modelo", "model", "veiculo", "veículo", "carro", "moto"],
   ano: ["ano", "year", "ano fabricacao", "ano fabricação"],
   versao: [
     "versao",

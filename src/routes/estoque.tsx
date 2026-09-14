@@ -42,28 +42,27 @@ export const Route = createFileRoute("/estoque")({
   },
   head: () => ({
     meta: [
-      { title: "Estoque de Veículos Seminovos e Novos : Ouroville Motors Uberlândia" },
+      { title: `Estoque de Carros e Motos | ${SITE.name} Uberlândia` },
       {
         name: "description",
         content:
-          "Confira todos os carros disponíveis na Ouroville Motors em Uberlândia MG. Filtre por marca, ano, faixa de preço e combustível.",
+          "Confira carros e motos disponíveis na Braza Veículos em Uberlândia MG. Filtre por marca, ano, preço e combustível.",
       },
       {
         name: "keywords",
         content:
-          "estoque de carros uberlandia, carros a venda uberlandia, seminovos uberlandia, filtro de carros",
+          "estoque de carros e motos uberlandia, veículos a venda uberlandia, seminovos uberlandia",
       },
-      { property: "og:title", content: "Estoque de Veículos : Ouroville Motors Uberlândia" },
+      { property: "og:title", content: `Estoque de Veículos | ${SITE.name}` },
       {
         property: "og:description",
-        content:
-          "Catálogo completo de carros seminovos e novos com garantia de procedência em Uberlândia.",
+        content: "Catálogo de carros e motos com atendimento direto em Uberlândia.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.url}/estoque` },
       { property: "og:image", content: SITE.ogImage },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Estoque de Carros : Ouroville Motors" },
+      { name: "twitter:title", content: `Estoque | ${SITE.name}` },
       {
         name: "twitter:description",
         content: "Explore nosso estoque de veículos revisados em Uberlândia.",
@@ -109,34 +108,46 @@ function Estoque() {
 
   return (
     <div className="relative z-30 bg-background">
-      <div className="mx-auto max-w-7xl px-4 py-10">
-        <h1 className="text-3xl font-bold text-foreground">Estoque</h1>
+      <div className="braza-grid border-b border-white/8 bg-[#0a0c10]">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20">
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-primary">
+            Duas e quatro rodas
+          </p>
+          <h1 className="mt-2 font-oswald text-5xl font-bold uppercase text-white sm:text-6xl">
+            Encontre seu próximo veículo.
+          </h1>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/50">
+            Explore o estoque da Braza e use os filtros para chegar mais rápido ao modelo ideal.
+          </p>
 
-        <form
-          className="mt-6 flex overflow-hidden rounded-full border border-border bg-card"
-          onSubmit={(e) => {
-            e.preventDefault();
-            setFilter({ q: termo || undefined });
-          }}
-        >
-          <input
-            value={termo}
-            onChange={(e) => setTermo(e.target.value)}
-            placeholder="Pesquisar marca, modelo ou ano..."
-            aria-label="Pesquisar no estoque"
-            className="flex-1 bg-transparent px-5 py-3 text-sm outline-none placeholder:text-muted-foreground"
-          />
-          <button
-            type="submit"
-            className="bg-gold px-5 text-primary-foreground"
-            aria-label="Buscar"
+          <form
+            className="braza-panel mt-8 flex max-w-4xl overflow-hidden rounded-2xl p-1.5"
+            onSubmit={(e) => {
+              e.preventDefault();
+              setFilter({ q: termo || undefined });
+            }}
           >
-            <Search className="h-4 w-4" />
-          </button>
-        </form>
+            <input
+              value={termo}
+              onChange={(e) => setTermo(e.target.value)}
+              placeholder="Pesquisar marca, modelo ou ano..."
+              aria-label="Pesquisar no estoque"
+              className="flex-1 bg-transparent px-4 py-3 text-sm text-white outline-none placeholder:text-white/35"
+            />
+            <button
+              type="submit"
+              className="rounded-xl bg-braza px-6 text-white"
+              aria-label="Buscar"
+            >
+              <Search className="h-4 w-4" />
+            </button>
+          </form>
+        </div>
+      </div>
 
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
         <div className="mt-8 grid gap-8 lg:grid-cols-[260px_1fr]">
-          <aside className="space-y-4 rounded-xl border border-border/70 bg-card p-5">
+          <aside className="braza-panel h-fit space-y-5 rounded-2xl p-5 lg:sticky lg:top-28">
             <h2 className="text-sm font-semibold uppercase tracking-wider text-primary">Filtros</h2>
             <label className="block text-xs text-muted-foreground">
               Marca
@@ -265,7 +276,7 @@ function Estoque() {
                 : sorted.map((c) => <CarCard key={c.id} carro={c} />)}
             </div>
             {!isLoading && sorted.length === 0 && (
-              <p className="rounded-xl border border-border/70 bg-card p-8 text-center text-sm text-muted-foreground">
+              <p className="braza-panel rounded-2xl p-8 text-center text-sm text-muted-foreground">
                 Nenhum veículo encontrado com esses filtros.
               </p>
             )}

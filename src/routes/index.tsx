@@ -1,43 +1,29 @@
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { Award, Search, ShieldCheck, Users } from "lucide-react";
+import { ArrowRight, Bike, CarFront, CheckCircle2, Search, ShieldCheck } from "lucide-react";
 import { useState } from "react";
-import autoMotorsLogo from "@/assets/auto-motors.png";
 import heroCar from "@/assets/hero-car.jpg";
+import logo from "@/assets/braza-logo.png";
 import { CarCard, CarCardSkeleton } from "@/components/site/CarCard";
-import { HeroHeadlights } from "@/components/site/HeroHeadlights";
 import { SITE, getAutoDealerSchema } from "@/lib/site";
 import { fetchCarros } from "@/lib/supabase";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: `${SITE.name} : Concessionária de Carros Seminovos e Novos em Uberlândia MG` },
-      {
-        name: "description",
-        content:
-          "Concessionária Ouroville Motors em Uberlândia (MG). Veículos revisados, procedência garantida e financiamento facilitado. Confira o estoque completo.",
-      },
+      { title: `${SITE.name} | Carros e Motos em Uberlândia MG` },
+      { name: "description", content: SITE.description },
       {
         name: "keywords",
         content:
-          "carros uberlandia, seminovos uberlandia, concessionaria uberlandia, comprar carro uberlandia, ouroville motors",
+          "carros uberlandia, motos uberlandia, seminovos uberlandia, concessionaria uberlandia, braza veiculos",
       },
-      {
-        property: "og:title",
-        content: `${SITE.name} : Veículos Seminovos e Novos em Uberlândia MG`,
-      },
-      {
-        property: "og:description",
-        content:
-          "Estoque selecionado de carros seminovos e novos com garantia de procedência e financiamento em Uberlândia.",
-      },
+      { property: "og:title", content: `${SITE.name} | Sua próxima conquista começa aqui` },
+      { property: "og:description", content: SITE.description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.url}/` },
       { property: "og:image", content: SITE.ogImage },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: `${SITE.name} : Veículos em Uberlândia` },
-      { name: "twitter:description", content: SITE.description },
     ],
     links: [{ rel: "canonical", href: `${SITE.url}/` }],
   }),
@@ -51,7 +37,7 @@ const websiteSchema = {
   url: SITE.url,
   potentialAction: {
     "@type": "SearchAction",
-    target: `${SITE.url}/estoque?termo={search_term_string}`,
+    target: `${SITE.url}/estoque?q={search_term_string}`,
     "query-input": "required name=search_term_string",
   },
 };
@@ -64,10 +50,10 @@ function Home() {
     queryFn: () => fetchCarros({ novidades: true, limit: 6 }),
   });
 
-  const marcas = Array.from(new Set((data ?? []).map((c) => c.marca))).slice(0, 12);
+  const marcas = Array.from(new Set((data ?? []).map((item) => item.marca))).slice(0, 10);
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getAutoDealerSchema()) }}
@@ -76,196 +62,217 @@ function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
-      <section className="relative overflow-hidden border-y border-border/60">
+
+      <section className="braza-grid relative min-h-[670px] overflow-hidden border-b border-white/10">
         <img
           src={heroCar}
-          alt="Carro premium em showroom escuro com iluminação dourada"
+          alt="Veículo em showroom escuro da Braza Veículos"
           width={1920}
           height={1088}
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-40 grayscale-[0.25]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/70 to-background/95" />
-        <HeroHeadlights />
-        <div className="relative mx-auto max-w-5xl px-4 pb-36 pt-28 text-center sm:pb-40 sm:pt-32">
-          <div className="relative -top-1">
-            <div className="mb-7 inline-flex items-center gap-3 px-2 py-1 sm:gap-4">
-              <span className="whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.16em] text-white/70 sm:text-xs">
-                Em parceria com
-              </span>
-              <span className="h-7 w-px bg-white/15" aria-hidden />
-              <img
-                src={autoMotorsLogo}
-                alt="Auto Motors"
-                width={182}
-                height={87}
-                className="h-auto w-24 drop-shadow-[0_2px_5px_rgba(0,0,0,0.7)] sm:w-28"
-              />
-            </div>
-            <h1 className="mt-0 flex flex-col gap-2 font-oswald text-[clamp(30px,9vw,60px)] font-bold leading-none tracking-wide text-foreground">
-              <span className="whitespace-nowrap">Seu próximo seminovo,</span>
-              <span>
-                <span className="text-gold">no padrão de Ouro</span>
-                <span className="text-foreground">ville</span>
-              </span>
-            </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-foreground/80">
-              Segunda-Feira ao Sábado - 8h às 18h · Avenida João Pinheiro, 3488
-            </p>
-          </div>
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,8,11,0.98)_0%,rgba(7,8,11,0.88)_42%,rgba(7,8,11,0.42)_72%,rgba(7,8,11,0.84)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute -left-32 top-16 h-96 w-96 rounded-full bg-primary/15 blur-[120px]" />
+        <div className="absolute -right-20 top-12 h-96 w-96 rounded-full bg-secondary/15 blur-[120px]" />
 
-          <div className="relative top-3">
+        <div className="relative mx-auto grid min-h-[670px] max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:py-24">
+          <div className="max-w-3xl">
+            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-white/75 backdrop-blur">
+              <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_12px_rgba(228,32,47,0.9)]" />
+              Carros e motos em Uberlândia
+            </div>
+            <h1 className="font-oswald text-[clamp(3.25rem,8vw,6.7rem)] font-bold uppercase leading-[0.86] tracking-[-0.025em] text-white">
+              Sua próxima
+              <span className="mt-2 block text-braza">conquista</span>
+              <span className="mt-2 block text-white">começa aqui.</span>
+            </h1>
+            <p className="mt-7 max-w-xl text-base leading-relaxed text-white/62 sm:text-lg">
+              Escolha seu próximo carro ou sua próxima moto com procedência, atendimento direto e
+              uma negociação feita para você.
+            </p>
+
             <form
-              className="mx-auto mt-10 flex max-w-2xl overflow-visible rounded-full border border-primary/50 bg-card/90"
-              onSubmit={(e) => {
-                e.preventDefault();
+              className="braza-panel mt-9 flex max-w-2xl overflow-hidden rounded-2xl p-1.5 shadow-2xl"
+              onSubmit={(event) => {
+                event.preventDefault();
                 navigate({ to: "/estoque", search: { q: termo || undefined } });
               }}
             >
+              <Search className="ml-4 h-5 w-5 shrink-0 self-center text-white/35" />
               <input
                 value={termo}
-                onChange={(e) => setTermo(e.target.value)}
-                placeholder="Digite marca, modelo..."
+                onChange={(event) => setTermo(event.target.value)}
+                placeholder="Busque por marca, modelo ou ano"
                 aria-label="Buscar veículo"
-                className="min-w-0 flex-1 rounded-l-full bg-transparent px-4 py-4 text-sm text-foreground outline-none placeholder:text-muted-foreground sm:hidden"
-              />
-              <input
-                value={termo}
-                onChange={(e) => setTermo(e.target.value)}
-                placeholder="Digite marca, modelo ou ano"
-                aria-label="Buscar veículo"
-                className="hidden min-w-0 flex-1 rounded-l-full bg-transparent px-6 py-4 text-base text-foreground outline-none placeholder:text-muted-foreground sm:block"
+                className="min-w-0 flex-1 bg-transparent px-3 py-3.5 text-sm text-white outline-none placeholder:text-white/35 sm:text-base"
               />
               <button
                 type="submit"
-                className="gold-glow inline-flex items-center gap-2 rounded-r-full bg-gold px-6 text-base font-semibold text-primary-foreground transition hover:brightness-110"
+                className="inline-flex items-center gap-2 rounded-xl bg-braza px-5 py-3 text-sm font-bold text-white transition hover:brightness-110 sm:px-7"
               >
-                <Search className="h-5 w-5" /> Buscar
+                Buscar <ArrowRight className="h-4 w-4" />
               </button>
             </form>
+
             {marcas.length > 0 && (
-              <div className="mt-6 flex flex-wrap justify-center gap-3">
-                {marcas.map((m) => (
+              <div className="mt-5 flex flex-wrap gap-2">
+                <span className="py-1.5 text-xs text-white/35">Populares:</span>
+                {marcas.map((marca) => (
                   <Link
-                    key={m}
+                    key={marca}
                     to="/estoque"
-                    search={{ marca: m }}
-                    className="rounded-full border border-border px-5 py-2 text-sm font-medium text-muted-foreground transition hover:border-primary hover:text-primary"
+                    search={{ marca }}
+                    className="rounded-full border border-white/10 bg-black/20 px-3 py-1.5 text-xs text-white/55 transition hover:border-secondary/60 hover:text-white"
                   >
-                    {m}
+                    {marca}
                   </Link>
                 ))}
               </div>
             )}
           </div>
+
+          <div className="relative hidden justify-self-end lg:block">
+            <div className="absolute -inset-8 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 blur-3xl" />
+            <div className="braza-panel relative w-[330px] rotate-2 rounded-[2rem] p-8 shadow-[0_35px_90px_rgba(0,0,0,0.5)] transition duration-500 hover:rotate-0">
+              <img
+                src={logo}
+                alt={`Logo ${SITE.name}`}
+                className="mx-auto aspect-square w-full rounded-2xl object-contain"
+              />
+              <div className="mt-5 grid grid-cols-2 gap-3">
+                <div className="rounded-xl border border-primary/20 bg-primary/8 p-3 text-center">
+                  <CarFront className="mx-auto h-5 w-5 text-primary" />
+                  <p className="mt-1 text-xs font-bold uppercase tracking-wider text-white/70">
+                    Carros
+                  </p>
+                </div>
+                <div className="rounded-xl border border-secondary/20 bg-secondary/8 p-3 text-center">
+                  <Bike className="mx-auto h-5 w-5 text-secondary" />
+                  <p className="mt-1 text-xs font-bold uppercase tracking-wider text-white/70">
+                    Motos
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <div className="relative z-30 bg-background">
-        <section className="mx-auto max-w-7xl px-4 pb-3 pt-12 sm:pt-16">
-          <div className="relative overflow-hidden rounded-2xl border border-primary/30 bg-card px-5 py-6 shadow-[0_18px_45px_rgba(0,0,0,0.22)] sm:px-8 sm:py-7">
+      <section className="relative z-10 mx-auto -mt-10 max-w-7xl px-4 sm:px-6">
+        <div className="braza-panel grid overflow-hidden rounded-2xl shadow-2xl sm:grid-cols-3">
+          {[
+            {
+              icon: ShieldCheck,
+              title: "Procedência",
+              text: "Seleção cuidadosa e negociação transparente.",
+            },
+            {
+              icon: CarFront,
+              title: "Duas ou quatro rodas",
+              text: "Opções para todos os caminhos e estilos.",
+            },
+            {
+              icon: CheckCircle2,
+              title: "Atendimento direto",
+              text: "Da escolha à entrega, lado a lado com você.",
+            },
+          ].map((item, index) => (
             <div
-              className="pointer-events-none absolute -right-12 -top-16 h-40 w-40 rounded-full bg-gold/10 blur-3xl"
-              aria-hidden
-            />
-            <div className="relative flex items-center gap-4 sm:gap-5">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-primary/35 bg-primary/10 sm:h-14 sm:w-14">
-                <ShieldCheck className="h-6 w-6 text-primary sm:h-7 sm:w-7" aria-hidden />
+              key={item.title}
+              className={`flex gap-4 p-6 ${index < 2 ? "border-b border-white/8 sm:border-b-0 sm:border-r" : ""}`}
+            >
+              <span
+                className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${index === 1 ? "bg-secondary/12 text-secondary" : "bg-primary/12 text-primary"}`}
+              >
+                <item.icon className="h-5 w-5" />
               </span>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                  Seu próximo carro, com tranquilidade
-                </p>
-                <p className="mt-1 text-base font-medium leading-snug text-foreground sm:text-xl">
-                  Veículos revisados, laudo cautelar aprovado e financiamento em minutos.
-                </p>
+                <h2 className="font-oswald text-lg font-bold uppercase tracking-wide text-white">
+                  {item.title}
+                </h2>
+                <p className="mt-1 text-sm leading-relaxed text-white/45">{item.text}</p>
               </div>
             </div>
-          </div>
-        </section>
+          ))}
+        </div>
+      </section>
 
-        <section className="mx-auto max-w-7xl px-4 pb-16 pt-8">
-          <div className="flex items-center justify-between gap-4">
-            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Últimas novidades</h2>
+      <section className="mx-auto max-w-7xl px-4 pb-20 pt-24 sm:px-6">
+        <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-primary">
+              Seleção Braza
+            </p>
+            <h2 className="mt-2 font-oswald text-4xl font-bold uppercase tracking-tight text-white sm:text-5xl">
+              Últimas novidades
+            </h2>
+          </div>
+          <Link
+            to="/estoque"
+            className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/70 transition hover:text-secondary"
+          >
+            Explorar estoque <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+        <div className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {isLoading
+            ? Array.from({ length: 3 }).map((_, index) => <CarCardSkeleton key={index} />)
+            : (data ?? []).map((item) => <CarCard key={item.id} carro={item} />)}
+        </div>
+        {!isLoading && (data ?? []).length === 0 && (
+          <div className="braza-panel mt-9 rounded-2xl p-8 text-center text-sm text-white/55">
+            O estoque está sendo atualizado. Fale com a equipe para conhecer os veículos
+            disponíveis.
+          </div>
+        )}
+        {!isLoading && (data ?? []).length > 0 && (
+          <div className="mt-10 text-center">
             <Link
               to="/estoque"
-              className="shrink-0 rounded-full border border-primary/60 px-4 py-2 text-sm font-semibold text-primary transition hover:border-primary hover:bg-primary/10"
+              className="braza-glow inline-flex items-center gap-2 rounded-full bg-braza px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-white transition hover:-translate-y-0.5 hover:brightness-110"
             >
-              Ver todo estoque
+              Ver estoque completo <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {isLoading
-              ? Array.from({ length: 3 }).map((_, i) => <CarCardSkeleton key={i} />)
-              : (data ?? []).map((c) => <CarCard key={c.id} carro={c} />)}
-          </div>
-          {!isLoading && (data ?? []).length > 0 && (
-            <div className="mt-10 text-center">
-              <Link
-                to="/estoque"
-                className="gold-glow inline-flex items-center gap-2 rounded-full bg-gold px-8 py-3 text-base font-semibold text-black shadow-lg transition hover:brightness-110"
-              >
-                Ver o estoque completo
-              </Link>
-            </div>
-          )}
-          {!isLoading && (data ?? []).length === 0 && (
-            <p className="mt-8 text-center text-sm text-muted-foreground">
-              Estoque sendo atualizado. Fale com a gente pelo WhatsApp para conhecer os veículos
-              disponíveis.
+        )}
+      </section>
+
+      <section className="braza-grid relative border-y border-white/8 bg-[#0b0d12]">
+        <div className="absolute left-0 top-0 h-full w-1/2 bg-gradient-to-r from-primary/5 to-transparent" />
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-center">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-secondary">
+              Venha conhecer
             </p>
-          )}
-        </section>
-
-        <section className="border-y border-border/60 bg-card">
-          <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:grid-cols-3">
-            {[
-              {
-                icon: Award,
-                titulo: "Estoque Selecionado",
-                texto: "Carros escolhidos com cuidado para você.",
-              },
-              {
-                icon: Users,
-                titulo: "Atendimento personalizado",
-                texto: "Acompanhamento próximo em cada etapa.",
-              },
-              {
-                icon: ShieldCheck,
-                titulo: "Parceiros de financiamento",
-                texto: "Principais bancos, aprovação rápida.",
-              },
-            ].map((s) => (
-              <div key={s.titulo} className="text-center">
-                <s.icon className="mx-auto h-8 w-8 text-primary" aria-hidden />
-                <h3 className="mt-3 text-lg font-semibold text-foreground">{s.titulo}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{s.texto}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="border-t border-border/60 bg-card">
-          <div className="mx-auto max-w-7xl px-4 py-16">
-            <h2 className="text-center text-2xl font-bold text-foreground sm:text-3xl">
-              Onde estamos
+            <h2 className="mt-3 font-oswald text-4xl font-bold uppercase leading-none text-white sm:text-5xl">
+              A Braza está no seu caminho.
             </h2>
-            <p className="mt-3 text-center text-sm text-muted-foreground">
-              {SITE.address} · {SITE.hours}
+            <p className="mt-5 text-sm leading-relaxed text-white/55">
+              {SITE.address}
+              <br />
+              {SITE.hours}
             </p>
-            <div className="mt-8 overflow-hidden rounded-xl border border-border/70">
-              <iframe
-                title={`Mapa de localização da ${SITE.name}`}
-                src={SITE.mapEmbed}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="h-96 w-full border-0"
-              />
-            </div>
+            <Link
+              to="/sobre"
+              className="mt-7 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-primary transition hover:text-white"
+            >
+              Conheça nossa loja <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
-        </section>
-      </div>
+          <div className="overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
+            <iframe
+              title={`Mapa de localização da ${SITE.name}`}
+              src={SITE.mapEmbed}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="h-[380px] w-full border-0 grayscale-[0.7] contrast-125"
+            />
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

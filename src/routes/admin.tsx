@@ -30,13 +30,13 @@ export const Route = createFileRoute("/admin")({
   ssr: false,
   head: () => ({
     meta: [
-      { title: "Painel administrativo : Ouroville Motors" },
+      { title: "Painel administrativo | Braza Veículos" },
       {
         name: "description",
-        content: "Área restrita de gestão de estoque e leads da Ouroville Motors.",
+        content: "Área restrita de gestão de estoque da Braza Veículos.",
       },
       { name: "robots", content: "noindex" },
-      { property: "og:title", content: "Painel administrativo : Ouroville Motors" },
+      { property: "og:title", content: "Painel administrativo | Braza Veículos" },
       { property: "og:description", content: "Área restrita." },
     ],
   }),
@@ -418,7 +418,7 @@ function Painel() {
         if (error) throw error;
         bancoConfirmou = true;
       }
-      showSuccess("Carro salvo!");
+      showSuccess("Veículo salvo!");
       setForm({ ...vazio });
       setEditId(null);
       setArquivos([]);
@@ -436,7 +436,7 @@ function Painel() {
         await Promise.all(uploadsDaTentativa.map((foto) => removerArquivoStorage(foto)));
       }
       const mensagem = error instanceof Error ? error.message : "Erro ao salvar.";
-      console.error("Erro ao salvar carro:", error);
+      console.error("Erro ao salvar veículo:", error);
       toast.error(`Erro ao salvar. Verifique sua sessão e as permissões do Supabase. ${mensagem}`);
     } finally {
       setSalvando(false);
@@ -624,7 +624,9 @@ function Painel() {
       if (!resultado.carros.length) {
         setResultadoImportacao({
           total: 0,
-          erros: resultado.erros.length ? resultado.erros : ["Nenhum carro válido foi encontrado."],
+          erros: resultado.erros.length
+            ? resultado.erros
+            : ["Nenhum veículo válido foi encontrado."],
         });
         return;
       }
@@ -652,7 +654,7 @@ function Painel() {
       qc.invalidateQueries({ queryKey: ["admin", "carros"] });
       qc.invalidateQueries({ queryKey: ["carros"] });
       showSuccess(
-        `${registros.length} carro(s) importado(s). Agora adicione as imagens pela edição.`,
+        `${registros.length} veículo(s) importado(s). Agora adicione as imagens pela edição.`,
       );
     } catch (error) {
       toast.error(error instanceof Error ? error.message : "Não foi possível importar a planilha.");
@@ -793,7 +795,7 @@ function Painel() {
             {resultadoImportacao && (
               <div className="mt-4 rounded-md border border-border bg-background p-3 text-sm">
                 <p className="text-foreground">
-                  {resultadoImportacao.total} carro(s) importado(s).
+                  {resultadoImportacao.total} veículo(s) importado(s).
                 </p>
                 {resultadoImportacao.erros.length > 0 && (
                   <ul className="mt-2 list-disc space-y-1 pl-5 text-destructive">
@@ -867,7 +869,7 @@ function Painel() {
               })}
               {(novidadesIds?.length ?? 0) === 0 && (
                 <p className="rounded-lg border border-dashed border-border px-4 py-5 text-center text-sm text-muted-foreground">
-                  Nenhum carro selecionado.
+                  Nenhum veículo selecionado.
                 </p>
               )}
             </div>
@@ -878,7 +880,7 @@ function Painel() {
                 onChange={(e) => setCarroParaNovidades(e.target.value)}
                 className={`${inputCls} flex-1`}
               >
-                <option value="">Selecione um carro disponível</option>
+                <option value="">Selecione um veículo disponível</option>
                 {(carros.data ?? [])
                   .filter(
                     (carro) =>
@@ -920,7 +922,7 @@ function Painel() {
             className="mt-6 scroll-mt-24 rounded-xl border border-border/70 bg-card p-6"
           >
             <h2 className="text-lg font-semibold text-foreground">
-              {editId ? "Editar carro" : "Novo carro"}
+              {editId ? "Editar veículo" : "Novo veículo"}
             </h2>
             <div className="mt-4 grid gap-4 sm:grid-cols-3">
               {campo("marca", "Marca")}
@@ -1247,7 +1249,7 @@ function Painel() {
                 disabled={salvando}
                 className="rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground disabled:opacity-60"
               >
-                {salvando ? "Salvando..." : editId ? "Salvar alterações" : "Adicionar carro"}
+                {salvando ? "Salvando..." : editId ? "Salvar alterações" : "Adicionar veículo"}
               </button>
               {editId && (
                 <button
@@ -1351,7 +1353,7 @@ function AnalyticsPanel({ eventos, carros }: { eventos: AnalyticsSummaryRow[]; c
       <div className="grid gap-4 sm:grid-cols-3">
         {[
           ["Entradas no site", total("site_visit")],
-          ["Visualizações de carros", total("car_view")],
+          ["Visualizações de veículos", total("car_view")],
           ["Interesses via WhatsApp", total("whatsapp_click")],
         ].map(([titulo, valor]) => (
           <div key={String(titulo)} className="rounded-xl border border-border/70 bg-card p-5">

@@ -3,7 +3,7 @@ import { MessageCircle } from "lucide-react";
 import { whatsappLink } from "@/lib/site";
 import { trackAnalyticsEvent } from "@/lib/supabase";
 
-const DEFAULT_MESSAGE = "Olá! Qual carro a Ouroville recomenda em 2026?";
+const DEFAULT_MESSAGE = "Olá! Quero conhecer os carros e motos da Braza Veículos.";
 
 type WhatsAppContextType = {
   message: string | null;
@@ -26,7 +26,7 @@ export function WhatsAppProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    const visitKey = "ouroville-site-visit-v2";
+    const visitKey = "braza-site-visit-v1";
     if (sessionStorage.getItem(visitKey)) return;
     void trackAnalyticsEvent("site_visit").then((registered) => {
       if (registered) sessionStorage.setItem(visitKey, "1");
@@ -68,14 +68,14 @@ export function WhatsAppFloater() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Fale conosco pelo WhatsApp"
-      className="fixed bottom-4 right-4 z-50 flex h-[5.25rem] w-[5.25rem] cursor-pointer items-center justify-center rounded-full transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-background sm:bottom-6 sm:right-6 sm:h-24 sm:w-24"
+      className="fixed bottom-5 right-5 z-50 flex h-16 w-16 cursor-pointer items-center justify-center rounded-full transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-background sm:bottom-7 sm:right-7 sm:h-[4.5rem] sm:w-[4.5rem]"
     >
       <span
-        className="gold-glow relative flex h-full w-full items-center justify-center rounded-full bg-gold"
+        className="braza-glow relative flex h-full w-full items-center justify-center rounded-full bg-braza shadow-[0_12px_35px_rgba(216,32,47,0.3)]"
         aria-hidden="true"
       >
         <MessageCircle
-          className="relative z-10 h-10 w-10 text-primary-foreground sm:h-12 sm:w-12"
+          className="relative z-10 h-8 w-8 text-white sm:h-9 sm:w-9"
           strokeWidth={1.8}
           aria-hidden
         />

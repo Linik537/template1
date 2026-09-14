@@ -33,7 +33,7 @@ export const Route = createFileRoute("/carros/$marca/$modelo/$ano/$id")({
   head: ({ params }) => {
     const nome = `${params.marca} ${params.modelo} ${params.ano}`.replace(/-/g, " ").toUpperCase();
     const title = `${nome} à venda em Uberlândia MG - ${SITE.name}`;
-    const description = `${nome} disponível na Ouroville Motors em Uberlândia (MG). Confira fotos, ficha técnica, preço e entre em contato via WhatsApp.`;
+    const description = `${nome} disponível na Braza Veículos em Uberlândia (MG). Confira fotos, ficha técnica, preço e fale com nossa equipe pelo WhatsApp.`;
     const canonicalUrl = `${SITE.url}/carros/${params.marca}/${params.modelo}/${params.ano}/${params.id}`;
 
     return {
@@ -248,11 +248,11 @@ function Detalhe() {
       <div className="mx-auto max-w-2xl px-4 py-24 text-center">
         <h1 className="text-2xl font-bold text-foreground">Veículo indisponível</h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Este carro já foi vendido ou não está mais no estoque.
+          Este veículo já foi vendido ou não está mais no estoque.
         </p>
         <Link
           to="/estoque"
-          className="mt-6 inline-block rounded-full bg-gold px-6 py-3 text-sm font-semibold text-white"
+          className="mt-6 inline-block rounded-full bg-braza px-6 py-3 text-sm font-semibold text-white"
         >
           Ver estoque
         </Link>
@@ -296,7 +296,7 @@ function Detalhe() {
           }
         : undefined,
     image: fotos,
-    description: carro.descricao || `${nomeCarro} disponível na Ouroville Motors em Uberlândia MG.`,
+    description: carro.descricao || `${nomeCarro} disponível na Braza Veículos em Uberlândia MG.`,
     offers: {
       "@type": "Offer",
       priceCurrency: "BRL",
@@ -442,11 +442,11 @@ function Detalhe() {
         <aside className="min-w-0 lg:col-start-2 lg:row-span-2 lg:row-start-1">
           <h1 className="font-oswald text-[30px] font-semibold leading-tight tracking-wide sm:text-[32px]">
             <span className="text-white">{nomeMarca}</span>{" "}
-            <span className="text-gold">{nomeModelo}</span>{" "}
+            <span className="text-braza">{nomeModelo}</span>{" "}
             <span className="text-white">{anoModelo}</span>
           </h1>
           {versao && <p className="mt-1 text-lg text-white/85">{versao}</p>}
-          <p className="text-gold mt-10 inline-block font-inter text-2xl font-bold tracking-wide sm:text-3xl">
+          <p className="text-braza mt-10 inline-block font-inter text-2xl font-bold tracking-wide sm:text-3xl">
             {brl(carro.preco)}
           </p>
 
@@ -470,13 +470,13 @@ function Detalhe() {
             onClick={() => void trackAnalyticsEvent("whatsapp_click", carro.id)}
             target="_blank"
             rel="noopener noreferrer"
-            className="gold-glow mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-gold px-6 text-base font-semibold text-black shadow-lg transition hover:brightness-110"
+            className="braza-glow mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-braza px-6 text-base font-semibold text-black shadow-lg transition hover:brightness-110"
           >
             <MessageCircle className="h-5 w-5" /> Tenho interesse
           </a>
           <div className="mt-3 grid grid-cols-2 gap-3">
             <a
-              href="tel:34998290394"
+              href={`tel:${SITE.phoneDigits.slice(2)}`}
               className="inline-flex h-12 min-w-0 items-center justify-center gap-2 rounded-full border border-border/70 bg-transparent px-3 text-sm font-medium text-white transition hover:border-white/60 min-[400px]:text-base"
             >
               <Phone className="h-5 w-5 shrink-0" strokeWidth={1.75} aria-hidden /> Ligar
@@ -505,7 +505,7 @@ function Detalhe() {
       <div className="mt-12 text-center">
         <Link
           to="/estoque"
-          className="gold-outline inline-flex h-12 items-center gap-2 rounded-full bg-transparent px-8 text-base font-semibold text-white transition"
+          className="braza-outline inline-flex h-12 items-center gap-2 rounded-full bg-transparent px-8 text-base font-semibold text-white transition"
         >
           Ver o estoque completo
         </Link>

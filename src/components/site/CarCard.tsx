@@ -28,31 +28,31 @@ export function CarCard({ carro, compact = false }: { carro: Carro; compact?: bo
       }}
       onClick={scrollToPageTop}
       resetScroll
-      className="group flex flex-col overflow-hidden rounded-[28px] bg-background transition duration-200 hover:-translate-y-0.5"
+      className="group flex flex-col overflow-hidden rounded-2xl bg-[#0b0d12] transition duration-300 hover:-translate-y-1"
     >
-      <div className="relative aspect-[4/3] overflow-hidden rounded-t-[28px] border border-border bg-transparent">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl border border-white/10 bg-transparent">
         <ResilientImage
           src={foto}
-          alt={`${carTitle(carro)} à venda na Ouroville Motors`}
+          alt={`${carTitle(carro)} à venda na Braza Veículos`}
           loading="lazy"
           decoding="async"
           className={`h-full w-full transition duration-500 group-hover:scale-105 ${compact ? "object-contain sm:object-cover" : "object-cover"}`}
         />
         {carro.destaque && (
-          <span className="absolute left-3 top-3 rounded-full bg-gold px-3 py-1 text-xs font-semibold text-primary-foreground">
+          <span className="absolute left-3 top-3 rounded-full bg-braza px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white shadow-lg">
             {carro.destaque}
           </span>
         )}
       </div>
 
       <div
-        className={`flex flex-1 flex-col rounded-b-[28px] border border-t-0 border-[#d4a64a]/80 bg-background shadow-[0_0_0_1px_rgba(212,166,74,0.18)] transition group-hover:border-[#e8bf60] ${compact ? "gap-2 px-3 pb-3 pt-2 sm:gap-3 sm:px-4 sm:pb-4 sm:pt-3" : "gap-3 px-4 pb-4 pt-3"}`}
+        className={`relative flex flex-1 flex-col rounded-b-2xl border border-t-0 border-white/10 bg-[#0b0d12] transition before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-gradient-to-r before:from-primary before:via-white/30 before:to-secondary group-hover:border-secondary/35 ${compact ? "gap-2 px-3 pb-3 pt-3 sm:gap-3 sm:px-4 sm:pb-4 sm:pt-4" : "gap-3 px-5 pb-5 pt-4"}`}
       >
         <h3
           className={`font-oswald font-semibold leading-none tracking-[0.02em] text-foreground ${compact ? "text-[18px] sm:text-[22px]" : "text-[22px]"}`}
         >
           <span className="text-white">{formatCarName(carro.marca)}</span>{" "}
-          <span className="text-gold">{formatCarName(carro.modelo)}</span>
+          <span className="text-braza">{formatCarName(carro.modelo)}</span>
         </h3>
 
         <p
@@ -69,7 +69,7 @@ export function CarCard({ carro, compact = false }: { carro: Carro; compact?: bo
             className={`inline-flex shrink-0 items-center whitespace-nowrap ${compact ? "gap-1 sm:gap-1.5" : "gap-1.5"}`}
           >
             <CalendarDays
-              className={`${compact ? "h-3.5 w-3.5 sm:h-4 sm:w-4" : "h-4 w-4"} text-primary`}
+              className={`${compact ? "h-3.5 w-3.5 sm:h-4 sm:w-4" : "h-4 w-4"} text-secondary`}
             />
             {compact ? (
               <>
@@ -101,12 +101,12 @@ export function CarCard({ carro, compact = false }: { carro: Carro; compact?: bo
           className={`flex items-center ${compact ? "mt-0 justify-center gap-2 sm:mt-1 sm:justify-between sm:gap-3" : "mt-1 justify-between gap-3"}`}
         >
           <span
-            className={`text-gold font-inter font-semibold tracking-wide ${compact ? "text-base sm:text-xl" : "text-xl"}`}
+            className={`text-braza font-inter font-semibold tracking-wide ${compact ? "text-base sm:text-xl" : "text-xl"}`}
           >
             {brl(carro.preco)}
           </span>
           <span
-            className={`rounded-full border border-border font-medium text-foreground transition group-hover:border-primary group-hover:text-primary ${compact ? "hidden px-3 py-1.5 text-xs sm:inline-flex sm:px-4 sm:text-sm" : "inline-flex px-4 py-1.5 text-sm"}`}
+            className={`rounded-full border border-white/12 font-medium text-foreground transition group-hover:border-primary group-hover:bg-primary/10 group-hover:text-white ${compact ? "hidden px-3 py-1.5 text-xs sm:inline-flex sm:px-4 sm:text-sm" : "inline-flex px-4 py-1.5 text-sm"}`}
           >
             Ver mais
           </span>

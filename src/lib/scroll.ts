@@ -1,4 +1,4 @@
-export const SCROLL_TO_TOP_EVENT = "ouroville:scroll-to-top";
+export const SCROLL_TO_TOP_EVENT = "braza:scroll-to-top";
 
 export function scrollToPageTop() {
   if (typeof window === "undefined") return;

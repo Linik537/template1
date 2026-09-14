@@ -97,7 +97,7 @@ export const PLACEHOLDER_CAR =
     `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="800" height="600" fill="#1a1a1a"/><text x="400" y="300" fill="#8a8a8a" font-family="sans-serif" font-size="28" text-anchor="middle">Foto em breve</text></svg>`,
   );
 
-const INVENTORY_CACHE_KEY = "ouroville-inventory-v1";
+const INVENTORY_CACHE_KEY = "braza-inventory-v1";
 const INVENTORY_CACHE_MAX_AGE = 24 * 60 * 60 * 1000;
 
 function readInventoryCache(): Carro[] | null {

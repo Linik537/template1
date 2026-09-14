@@ -1,21 +1,22 @@
 export const SITE = {
-  name: "Ouroville Motors",
+  name: "Braza Veículos",
   url: "https://ourovillemotors.com.br",
   domain: "ourovillemotors.com.br",
   description:
-    "Concessionária de veículos novos e seminovos de procedência em Uberlândia MG. Confira nosso estoque com ofertas imperdíveis e financiamento facilitado.",
-  phoneDisplay: "(34) 9 9829-0394",
-  phoneDigits: "5534998290394",
-  address: "Avenida João Pinheiro, 3488 - Uberlândia - MG",
-  streetAddress: "Avenida João Pinheiro, 3488",
+    "Carros e motos novos e seminovos em Uberlândia MG. Encontre seu próximo veículo com atendimento direto, procedência e financiamento facilitado.",
+  phoneDisplay: "(34) 99971-3860",
+  phoneDigits: "5534999713860",
+  extraPhoneDisplay: "(34) 3212-0868",
+  extraPhoneDigits: "3432120868",
+  address: "Avenida João Pinheiro, 3123 - Uberlândia - MG",
+  streetAddress: "Avenida João Pinheiro, 3123",
   city: "Uberlândia",
   state: "MG",
   postalCode: "38400-714",
   country: "BR",
   hours: "Segunda à sábado, das 08:00 às 18:00",
-  email: "contato@ourovillemotors.com.br",
   mapEmbed:
-    "https://www.google.com/maps?q=Avenida+Jo%C3%A3o+Pinheiro,+3488,+Uberl%C3%A2ndia+-+MG&output=embed",
+    "https://www.google.com/maps?q=Avenida+Jo%C3%A3o+Pinheiro,+3123,+Uberl%C3%A2ndia+-+MG&output=embed",
   geo: {
     latitude: "-18.8953",
     longitude: "-48.2612",
@@ -75,6 +76,6 @@ export function getAutoDealerSchema() {
         closes: "18:00",
       },
     ],
-    priceRange: "$$$",
+    priceRange: "$$",
   };
 }

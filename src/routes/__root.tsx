@@ -80,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Ouroville Motors : Carros Seminovos e Novos em Uberlândia MG" },
+      { title: "Braza Veículos | Carros e Motos em Uberlândia MG" },
       {
         name: "description",
         content: SITE.description,
@@ -96,7 +96,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:locale", content: "pt_BR" },
       { property: "og:image", content: SITE.ogImage },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@ourovillemotors" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
