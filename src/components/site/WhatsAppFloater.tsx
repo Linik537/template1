@@ -68,14 +68,14 @@ export function WhatsAppFloater() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Fale conosco pelo WhatsApp"
-      className="fixed bottom-4 right-4 z-50 flex h-[5.5rem] w-[5.5rem] cursor-pointer items-center justify-center rounded-full transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-background sm:bottom-6 sm:right-6 sm:h-24 sm:w-24"
+      className="fixed bottom-4 right-4 z-50 flex h-28 w-28 cursor-pointer items-center justify-center rounded-full transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-background sm:bottom-6 sm:right-6 sm:h-32 sm:w-32"
     >
       <span
         className="braza-glow relative flex h-full w-full items-center justify-center rounded-full bg-braza shadow-[0_12px_35px_rgba(216,32,47,0.3)]"
         aria-hidden="true"
       >
         <MessageCircle
-          className="relative z-10 h-11 w-11 text-white sm:h-12 sm:w-12"
+          className="relative z-10 h-14 w-14 text-white sm:h-16 sm:w-16"
           strokeWidth={1.8}
           aria-hidden
         />

@@ -70,9 +70,9 @@ export function Header() {
             }}
             target="_blank"
             rel="noopener noreferrer"
-            className="braza-glow ml-auto inline-flex items-center gap-2 rounded-full bg-braza px-4 py-2.5 text-sm font-bold text-white shadow-[0_8px_24px_rgba(216,32,47,0.22)] transition hover:-translate-y-0.5 hover:brightness-110 md:ml-0"
+            className="braza-glow ml-auto inline-flex items-center gap-2.5 rounded-full bg-braza px-5 py-3 text-base font-bold text-white shadow-[0_8px_24px_rgba(216,32,47,0.22)] transition hover:-translate-y-0.5 hover:brightness-110 md:ml-0"
           >
-            <MessageCircle className="h-5 w-5 text-white" aria-hidden />
+            <MessageCircle className="h-5.5 w-5.5 text-white" aria-hidden />
             <span className="hidden sm:inline">{SITE.phoneDisplay}</span>
             <span className="sm:hidden">WhatsApp</span>
           </a>
