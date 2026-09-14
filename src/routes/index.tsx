@@ -70,9 +70,9 @@ function Home() {
           height={1088}
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover object-center opacity-80 grayscale-[0.1]"
+          className="absolute inset-y-0 right-0 h-full w-full object-cover object-[68%_center] opacity-60 grayscale-[0.1] [mask-image:linear-gradient(to_right,transparent_0%,black_38%)] sm:w-[84%] sm:object-center sm:opacity-85 lg:w-[72%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/25 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#08090c] via-[#08090c]/75 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background/80 to-transparent" />
         <div className="absolute -left-32 top-16 h-96 w-96 rounded-full bg-primary/15 blur-[120px]" />
         <div className="absolute -right-20 top-12 h-96 w-96 rounded-full bg-secondary/15 blur-[120px]" />
