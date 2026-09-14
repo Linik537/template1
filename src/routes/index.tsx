@@ -79,10 +79,9 @@ function Home() {
 
         <div className="relative mx-auto flex min-h-[670px] max-w-7xl items-center px-4 py-20 sm:px-6 lg:py-24">
           <div className="max-w-3xl">
-            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-white/75 backdrop-blur">
-              <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_12px_rgba(228,32,47,0.9)]" />
-              Carros e motos em Uberlândia
-            </div>
+            <p className="mb-7 text-[10px] font-bold uppercase tracking-[0.32em] text-primary sm:text-xs sm:tracking-[0.42em]">
+              Braza Veículos Uberlândia
+            </p>
             <h1 className="font-display text-[clamp(3.25rem,8vw,6.7rem)] font-bold uppercase leading-[0.94] tracking-[-0.025em] text-white">
               Sua próxima
               <span className="mt-1 block pb-2 text-braza">conquista</span>
