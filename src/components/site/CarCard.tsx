@@ -69,7 +69,7 @@ export function CarCard({ carro, compact = false }: { carro: Carro; compact?: bo
             className={`inline-flex shrink-0 items-center whitespace-nowrap ${compact ? "gap-1 sm:gap-1.5" : "gap-1.5"}`}
           >
             <CalendarDays
-              className={`${compact ? "h-3.5 w-3.5 sm:h-4 sm:w-4" : "h-4 w-4"} text-secondary`}
+              className={`${compact ? "h-3.5 w-3.5 sm:h-4 sm:w-4" : "h-4 w-4"} text-white`}
             />
             {compact ? (
               <>
@@ -83,9 +83,7 @@ export function CarCard({ carro, compact = false }: { carro: Carro; compact?: bo
           <span
             className={`inline-flex shrink-0 items-center whitespace-nowrap ${compact ? "gap-1 sm:gap-1.5" : "gap-1.5"}`}
           >
-            <Gauge
-              className={`${compact ? "h-3.5 w-3.5 sm:h-4 sm:w-4" : "h-4 w-4"} text-primary`}
-            />
+            <Gauge className={`${compact ? "h-3.5 w-3.5 sm:h-4 sm:w-4" : "h-4 w-4"} text-white`} />
             {compact ? (
               <>
                 <span className="sm:hidden">{kmCompacta}</span>

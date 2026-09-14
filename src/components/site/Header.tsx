@@ -20,7 +20,6 @@ export function Header() {
 
   return (
     <div className="sticky top-0 z-50">
-      <div className="h-1 bg-[linear-gradient(90deg,#e4202f_0_42%,#fff_42%_58%,#1767d9_58%)]" />
       <header className="border-b border-white/10 bg-[#090a0d]/90 shadow-[0_12px_40px_rgba(0,0,0,0.35)] backdrop-blur-2xl">
         <div className="mx-auto flex h-[76px] max-w-7xl items-center gap-3 px-4 sm:h-[88px] sm:px-6">
           <Link
@@ -50,8 +49,8 @@ export function Header() {
                 key={n.to}
                 to={n.to}
                 onClick={n.to === "/estoque" ? scrollToPageTop : undefined}
-                className="relative px-4 py-3 text-sm font-bold uppercase tracking-[0.18em] text-white/70 transition after:absolute after:inset-x-4 after:bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:bg-primary after:transition hover:text-white hover:after:scale-x-100"
-                activeProps={{ className: "!text-white after:!scale-x-100" }}
+                className="rounded-md px-3 py-2 text-xl font-display font-semibold uppercase tracking-widest text-white transition hover:text-primary"
+                activeProps={{ className: "!text-primary" }}
               >
                 {n.label}
               </Link>
@@ -62,7 +61,7 @@ export function Header() {
             href={`tel:${SITE.phoneDigits.slice(2)}`}
             aria-label={`Ligar para ${SITE.phoneDisplay}`}
             title={`Ligar para ${SITE.phoneDisplay}`}
-            className="hidden h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 text-white/70 transition hover:border-secondary/60 hover:bg-secondary/10 hover:text-secondary lg:inline-flex"
+            className="hidden h-11 w-11 shrink-0 items-center justify-center text-white/70 transition hover:text-primary lg:inline-flex"
           >
             <Phone className="h-6 w-6" aria-hidden />
           </a>

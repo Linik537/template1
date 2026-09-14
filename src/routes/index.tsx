@@ -1,9 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { ArrowRight, Bike, CarFront, CheckCircle2, Search, ShieldCheck } from "lucide-react";
+import { ArrowRight, CarFront, CheckCircle2, Search, ShieldCheck } from "lucide-react";
 import { useState } from "react";
 import heroCar from "@/assets/hero-car.jpg";
-import logo from "@/assets/braza-logo.png";
 import { CarCard, CarCardSkeleton } from "@/components/site/CarCard";
 import { SITE, getAutoDealerSchema } from "@/lib/site";
 import { fetchCarros } from "@/lib/supabase";
@@ -71,22 +70,22 @@ function Home() {
           height={1088}
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover object-center opacity-40 grayscale-[0.25]"
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-80 grayscale-[0.1]"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,8,11,0.98)_0%,rgba(7,8,11,0.88)_42%,rgba(7,8,11,0.42)_72%,rgba(7,8,11,0.84)_100%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/25 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background/80 to-transparent" />
         <div className="absolute -left-32 top-16 h-96 w-96 rounded-full bg-primary/15 blur-[120px]" />
         <div className="absolute -right-20 top-12 h-96 w-96 rounded-full bg-secondary/15 blur-[120px]" />
 
-        <div className="relative mx-auto grid min-h-[670px] max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:py-24">
+        <div className="relative mx-auto flex min-h-[670px] max-w-7xl items-center px-4 py-20 sm:px-6 lg:py-24">
           <div className="max-w-3xl">
             <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-white/75 backdrop-blur">
               <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_12px_rgba(228,32,47,0.9)]" />
               Carros e motos em Uberlândia
             </div>
-            <h1 className="font-oswald text-[clamp(3.25rem,8vw,6.7rem)] font-bold uppercase leading-[0.86] tracking-[-0.025em] text-white">
+            <h1 className="font-display text-[clamp(3.25rem,8vw,6.7rem)] font-bold uppercase leading-[0.94] tracking-[-0.025em] text-white">
               Sua próxima
-              <span className="mt-2 block text-braza">conquista</span>
+              <span className="mt-1 block pb-2 text-braza">conquista</span>
               <span className="mt-2 block text-white">começa aqui.</span>
             </h1>
             <p className="mt-7 max-w-xl text-base leading-relaxed text-white/62 sm:text-lg">
@@ -132,31 +131,6 @@ function Home() {
                 ))}
               </div>
             )}
-          </div>
-
-          <div className="relative hidden justify-self-end lg:block">
-            <div className="absolute -inset-8 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 blur-3xl" />
-            <div className="braza-panel relative w-[330px] rotate-2 rounded-[2rem] p-8 shadow-[0_35px_90px_rgba(0,0,0,0.5)] transition duration-500 hover:rotate-0">
-              <img
-                src={logo}
-                alt={`Logo ${SITE.name}`}
-                className="mx-auto aspect-square w-full rounded-2xl object-contain"
-              />
-              <div className="mt-5 grid grid-cols-2 gap-3">
-                <div className="rounded-xl border border-primary/20 bg-primary/8 p-3 text-center">
-                  <CarFront className="mx-auto h-5 w-5 text-primary" />
-                  <p className="mt-1 text-xs font-bold uppercase tracking-wider text-white/70">
-                    Carros
-                  </p>
-                </div>
-                <div className="rounded-xl border border-secondary/20 bg-secondary/8 p-3 text-center">
-                  <Bike className="mx-auto h-5 w-5 text-secondary" />
-                  <p className="mt-1 text-xs font-bold uppercase tracking-wider text-white/70">
-                    Motos
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
