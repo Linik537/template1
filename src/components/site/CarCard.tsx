@@ -52,7 +52,7 @@ export function CarCard({ carro, compact = false }: { carro: Carro; compact?: bo
           className={`font-oswald font-semibold leading-none tracking-[0.02em] text-foreground ${compact ? "text-[18px] sm:text-[22px]" : "text-[22px]"}`}
         >
           <span className="text-white">{formatCarName(carro.marca)}</span>{" "}
-          <span className="text-braza">{formatCarName(carro.modelo)}</span>
+          <span className="text-model">{formatCarName(carro.modelo)}</span>
         </h3>
 
         <p

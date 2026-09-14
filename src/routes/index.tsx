@@ -177,8 +177,9 @@ function Home() {
       <section className="mx-auto max-w-7xl px-4 pb-20 pt-24 sm:px-6">
         <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-primary">
-              Seleção Braza
+            <p className="text-xs font-bold uppercase tracking-[0.24em]">
+              <span className="text-white">Seleção</span>{" "}
+              <span className="text-secondary">Braza</span>
             </p>
             <h2 className="mt-2 font-oswald text-4xl font-bold uppercase tracking-tight text-white sm:text-5xl">
               Últimas novidades

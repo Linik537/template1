@@ -442,7 +442,7 @@ function Detalhe() {
         <aside className="min-w-0 lg:col-start-2 lg:row-span-2 lg:row-start-1">
           <h1 className="font-oswald text-[30px] font-semibold leading-tight tracking-wide sm:text-[32px]">
             <span className="text-white">{nomeMarca}</span>{" "}
-            <span className="text-braza">{nomeModelo}</span>{" "}
+            <span className="text-model">{nomeModelo}</span>{" "}
             <span className="text-white">{anoModelo}</span>
           </h1>
           {versao && <p className="mt-1 text-lg text-white/85">{versao}</p>}
