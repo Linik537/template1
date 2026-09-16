@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { ArrowRight, CarFront, CheckCircle2, Search, ShieldCheck } from "lucide-react";
 import { useState } from "react";
-import heroCar from "@/assets/hero-car.jpg";
+import heroShowroom from "@/assets/hero-showroom-v2.jpg";
 import { CarCard, CarCardSkeleton } from "@/components/site/CarCard";
 import { SITE, getAutoDealerSchema } from "@/lib/site";
 import { fetchCarros } from "@/lib/supabase";
@@ -64,13 +64,13 @@ function Home() {
 
       <section className="braza-grid relative min-h-[670px] overflow-hidden border-b border-white/10">
         <img
-          src={heroCar}
-          alt="Veículo em showroom escuro da Braza Veículos"
-          width={1920}
-          height={1088}
+          src={heroShowroom}
+          alt="Carro e moto em showroom escuro da Braza Veículos"
+          width={2027}
+          height={776}
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-y-0 right-0 h-full w-full object-cover object-[68%_center] opacity-60 grayscale-[0.1] [mask-image:linear-gradient(to_right,transparent_0%,black_38%)] sm:w-[84%] sm:object-center sm:opacity-85 lg:w-[72%]"
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-75 sm:opacity-90"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#08090c] via-[#08090c]/75 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background/80 to-transparent" />
@@ -90,6 +90,9 @@ function Home() {
             <p className="mt-7 max-w-xl text-base leading-relaxed text-white/62 sm:text-lg">
               Escolha seu próximo carro ou sua próxima moto com procedência, atendimento direto e
               uma negociação feita para você.
+            </p>
+            <p className="mt-3 max-w-2xl text-xs leading-relaxed text-white/50 sm:text-sm">
+              Av. João pinheiro, 3123 - Uberlândia - MG · Segunda à sábado, das 08:00 às 18:00
             </p>
 
             <form
