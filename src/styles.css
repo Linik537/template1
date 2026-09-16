@@ -144,12 +144,7 @@ img {
 }
 
 @utility text-braza {
-  background-image: linear-gradient(
-    100deg,
-    oklch(0.72 0.22 25) 8%,
-    oklch(0.96 0 0) 48%,
-    oklch(0.68 0.19 252) 92%
-  );
+  background-image: linear-gradient(100deg, oklch(0.58 0.27 24), oklch(0.72 0.29 29));
   background-clip: text;
   color: transparent;
 }
@@ -161,24 +156,12 @@ img {
 }
 
 @utility bg-braza {
-  background-image: linear-gradient(115deg, oklch(0.58 0.24 25), oklch(0.67 0.23 28));
+  background-image: linear-gradient(115deg, oklch(0.53 0.28 24), oklch(0.68 0.29 29));
 }
 
 .braza-glow {
   position: relative;
   isolation: isolate;
-}
-
-.braza-glow::before {
-  position: absolute;
-  z-index: -1;
-  inset: -4px;
-  border-radius: inherit;
-  background: linear-gradient(100deg, oklch(0.65 0.25 26), oklch(0.58 0.21 254));
-  content: "";
-  filter: blur(10px);
-  opacity: 0.18;
-  pointer-events: none;
 }
 
 .braza-outline {
@@ -203,14 +186,6 @@ img {
   mask-composite: exclude;
 }
 
-@media (pointer: coarse) {
-  .braza-glow::before {
-    inset: -2px;
-    filter: blur(6px);
-    opacity: 0.12;
-  }
-}
-
 @layer base {
   * {
     border-color: var(--color-border);
@@ -219,10 +194,6 @@ img {
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    background-image:
-      radial-gradient(circle at 12% 0%, oklch(0.48 0.2 255 / 0.11), transparent 30rem),
-      radial-gradient(circle at 88% 18%, oklch(0.5 0.22 25 / 0.1), transparent 28rem);
-    background-attachment: fixed;
   }
 }
 

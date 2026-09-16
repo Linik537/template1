@@ -36,8 +36,6 @@ function Sobre() {
       />
 
       <section className="braza-grid relative border-b border-white/8 bg-[#0a0c10]">
-        <div className="absolute -left-32 top-0 h-96 w-96 rounded-full bg-primary/12 blur-[120px]" />
-        <div className="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-secondary/12 blur-[120px]" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1fr_0.75fr] lg:py-28">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.25em] text-primary">

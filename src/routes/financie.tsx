@@ -80,8 +80,6 @@ function Financie() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(financialSchema) }}
       />
-      <div className="absolute -left-40 top-0 h-96 w-96 rounded-full bg-primary/10 blur-[120px]" />
-      <div className="absolute -right-40 top-40 h-96 w-96 rounded-full bg-secondary/10 blur-[120px]" />
       <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
         <p className="text-xs font-bold uppercase tracking-[0.25em] text-primary">
           Crédito sob medida

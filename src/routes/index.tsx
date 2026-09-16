@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { ArrowRight, CarFront, CheckCircle2, Search, ShieldCheck } from "lucide-react";
 import { useState } from "react";
-import heroShowroom from "@/assets/hero-showroom-v2.jpg";
+import heroMotorcycle from "@/assets/hero-motorcycle-v3.jpg";
 import { CarCard, CarCardSkeleton } from "@/components/site/CarCard";
 import { SITE, getAutoDealerSchema } from "@/lib/site";
 import { fetchCarros } from "@/lib/supabase";
@@ -64,18 +64,16 @@ function Home() {
 
       <section className="braza-grid relative min-h-[670px] overflow-hidden border-b border-white/10">
         <img
-          src={heroShowroom}
-          alt="Carro e moto em showroom escuro da Braza Veículos"
-          width={2027}
-          height={776}
+          src={heroMotorcycle}
+          alt="Moto esportiva da Braza Veículos em cenário urbano"
+          width={2048}
+          height={768}
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover object-center opacity-75 sm:opacity-90"
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-85 sm:opacity-95"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#08090c] via-[#08090c]/75 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background/80 to-transparent" />
-        <div className="absolute -left-32 top-16 h-96 w-96 rounded-full bg-primary/15 blur-[120px]" />
-        <div className="absolute -right-20 top-12 h-96 w-96 rounded-full bg-secondary/15 blur-[120px]" />
 
         <div className="relative mx-auto flex min-h-[670px] max-w-7xl items-center px-4 py-20 sm:px-6 lg:py-24">
           <div className="max-w-3xl">
@@ -218,7 +216,6 @@ function Home() {
       </section>
 
       <section className="braza-grid relative border-y border-white/8 bg-[#0b0d12]">
-        <div className="absolute left-0 top-0 h-full w-1/2 bg-gradient-to-r from-primary/5 to-transparent" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-center">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-secondary">
