@@ -71,7 +71,7 @@ export function WhatsAppFloater() {
       className="fixed bottom-4 right-4 z-50 flex h-28 w-28 cursor-pointer items-center justify-center rounded-full transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-background sm:bottom-6 sm:right-6 sm:h-32 sm:w-32"
     >
       <span
-        className="braza-glow relative flex h-full w-full items-center justify-center rounded-full bg-braza shadow-[0_12px_35px_rgba(216,32,47,0.3)]"
+        className="relative flex h-full w-full items-center justify-center rounded-full bg-cta-blue shadow-[0_12px_35px_rgba(18,59,139,0.3)]"
         aria-hidden="true"
       >
         <MessageCircle

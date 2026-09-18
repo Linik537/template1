@@ -6,7 +6,7 @@ import { SITE, whatsappLink } from "@/lib/site";
 export function Footer() {
   return (
     <footer className="relative mt-20 overflow-hidden border-t border-white/10 bg-[#08090c]">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-primary via-primary to-secondary" />
+      <div className="absolute inset-x-0 top-0 h-px bg-white" />
       <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:grid-cols-2 lg:grid-cols-[1.35fr_1fr_0.8fr_0.8fr]">
         <div>
           <div className="flex items-center gap-4">
@@ -45,12 +45,12 @@ export function Footer() {
             href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
+            className="mt-3 flex w-fit items-center gap-2 text-sm text-muted-foreground hover:text-secondary"
           >
             <MessageCircle className="h-4 w-4 shrink-0 text-primary" />
             <span>{SITE.phoneDisplay}</span>
           </a>
-          <p className="mt-3 inline-flex items-center gap-2 text-sm text-muted-foreground">
+          <p className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
             <Phone className="h-4 w-4 shrink-0 text-secondary" />
             <span>{SITE.extraPhoneDisplay}</span>
           </p>

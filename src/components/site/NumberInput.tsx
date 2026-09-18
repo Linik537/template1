@@ -52,7 +52,7 @@ export function NumberInput({
           type="button"
           aria-label="Aumentar valor"
           onClick={() => changeBy(1)}
-          className="number-stepper flex h-5 w-10 items-center justify-center rounded-md transition hover:bg-primary/15"
+          className="number-stepper flex h-5 w-10 items-center justify-center rounded-md transition hover:bg-white/10"
         >
           <span aria-hidden className="number-chevron number-chevron-up" />
         </button>
@@ -60,7 +60,7 @@ export function NumberInput({
           type="button"
           aria-label="Diminuir valor"
           onClick={() => changeBy(-1)}
-          className="number-stepper flex h-5 w-10 items-center justify-center rounded-md transition hover:bg-primary/15"
+          className="number-stepper flex h-5 w-10 items-center justify-center rounded-md transition hover:bg-white/10"
         >
           <span aria-hidden className="number-chevron number-chevron-down" />
         </button>

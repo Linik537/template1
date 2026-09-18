@@ -159,6 +159,10 @@ img {
   background-image: linear-gradient(115deg, oklch(0.53 0.28 24), oklch(0.68 0.29 29));
 }
 
+@utility bg-cta-blue {
+  background-image: linear-gradient(90deg, #123b8b, #2879e6);
+}
+
 .braza-glow {
   position: relative;
   isolation: isolate;
@@ -269,7 +273,7 @@ img {
   display: block;
   width: 10px;
   height: 8px;
-  background-image: linear-gradient(135deg, oklch(0.65 0.25 26), oklch(0.58 0.21 254));
+  background: white;
   clip-path: polygon(0 0, 50% 70%, 100% 0, 100% 32%, 50% 100%, 0 32%);
 }
 

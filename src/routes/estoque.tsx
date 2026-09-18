@@ -102,9 +102,9 @@ function Estoque() {
     navigate({ search: (prev) => ({ ...prev, ...patch }) });
 
   const selectCls =
-    "w-full rounded-md border border-border bg-card px-3 py-2 text-sm text-foreground outline-none focus:border-primary";
+    "w-full rounded-md border border-white/30 bg-card px-3 py-2 text-sm text-foreground outline-none focus:border-white";
   const orderSelectCls =
-    "rounded-md border border-border bg-card px-3 py-2 text-sm text-foreground outline-none focus:border-primary w-full sm:w-auto sm:min-w-[190px]";
+    "rounded-md border border-white/30 bg-card px-3 py-2 text-sm text-foreground outline-none focus:border-white w-full sm:w-auto sm:min-w-[190px]";
 
   return (
     <div className="relative z-30 bg-background">
@@ -121,7 +121,7 @@ function Estoque() {
           </p>
 
           <form
-            className="braza-panel mt-8 flex max-w-4xl overflow-hidden rounded-2xl p-1.5"
+            className="mt-8 flex max-w-4xl overflow-hidden rounded-2xl border border-white/30 bg-card p-1.5"
             onSubmit={(e) => {
               e.preventDefault();
               setFilter({ q: termo || undefined });
@@ -136,7 +136,7 @@ function Estoque() {
             />
             <button
               type="submit"
-              className="rounded-xl bg-secondary px-6 text-white transition hover:brightness-110"
+              className="rounded-xl bg-cta-blue px-6 text-white transition hover:brightness-110"
               aria-label="Buscar"
             >
               <Search className="h-4 w-4" />
@@ -147,8 +147,8 @@ function Estoque() {
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
         <div className="mt-8 grid gap-8 lg:grid-cols-[260px_1fr]">
-          <aside className="braza-panel h-fit space-y-5 rounded-2xl p-5 lg:sticky lg:top-28">
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-primary">Filtros</h2>
+          <aside className="h-fit space-y-5 rounded-2xl border border-white/30 bg-card p-5 lg:sticky lg:top-28">
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-white">Filtros</h2>
             <label className="block text-xs text-muted-foreground">
               Marca
               <select
@@ -241,7 +241,7 @@ function Estoque() {
                 setTermo("");
                 navigate({ search: {} });
               }}
-              className="w-full rounded-md border border-border px-3 py-2 text-xs text-muted-foreground hover:text-primary"
+              className="w-full rounded-md border border-white/30 px-3 py-2 text-xs text-muted-foreground hover:border-white hover:text-white"
             >
               Limpar filtros
             </button>

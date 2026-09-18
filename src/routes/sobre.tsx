@@ -38,7 +38,7 @@ function Sobre() {
       <section className="braza-grid relative border-b border-white/8 bg-[#0a0c10]">
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1fr_0.75fr] lg:py-28">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-primary">
+            <p className="pl-0.5 text-xs font-bold uppercase tracking-[0.25em] text-primary">
               Nossa identidade
             </p>
             <h1 className="mt-4 max-w-3xl font-oswald text-5xl font-bold uppercase leading-[0.95] text-white sm:text-7xl">
@@ -52,13 +52,11 @@ function Sobre() {
               respeito pelo seu momento.
             </p>
           </div>
-          <div className="braza-panel mx-auto max-w-sm rounded-[2rem] p-7 shadow-2xl">
-            <img
-              src={logo}
-              alt={`Logo ${SITE.name}`}
-              className="aspect-square w-full rounded-2xl object-contain"
-            />
-          </div>
+          <img
+            src={logo}
+            alt={`Logo ${SITE.name}`}
+            className="mx-auto aspect-square w-full max-w-md object-contain lg:max-w-lg"
+          />
         </div>
       </section>
 
@@ -118,9 +116,9 @@ function Sobre() {
                 href={whatsappLink("Olá! Gostaria de falar com a Braza Veículos.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-start gap-4 rounded-xl border border-white/8 bg-white/[0.025] p-4 transition hover:border-primary/50"
+                className="group flex items-start gap-4 rounded-xl border border-white/8 bg-white/[0.025] p-4 transition hover:border-secondary/50"
               >
-                <MessageCircle className="mt-0.5 h-5 w-5 text-primary" />
+                <MessageCircle className="mt-0.5 h-5 w-5 text-secondary" />
                 <span>
                   <strong className="block text-xs uppercase tracking-wider text-white/35">
                     WhatsApp
@@ -145,7 +143,7 @@ function Sobre() {
             <iframe
               title={`Mapa da localização da ${SITE.name}`}
               src={SITE.mapEmbed}
-              className="h-[520px] w-full grayscale-[0.7] contrast-125"
+              className="h-[520px] w-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />

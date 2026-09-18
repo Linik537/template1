@@ -70,26 +70,23 @@ function Home() {
           height={768}
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover object-center opacity-85 sm:opacity-95"
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-85 sm:opacity-95 lg:-translate-x-[4%] lg:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#08090c] via-[#08090c]/75 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background/80 to-transparent" />
 
         <div className="relative mx-auto flex min-h-[670px] max-w-7xl items-center px-4 py-20 sm:px-6 lg:py-24">
           <div className="max-w-3xl">
-            <p className="mb-7 text-[10px] font-bold uppercase tracking-[0.32em] text-primary sm:text-xs sm:tracking-[0.42em]">
-              Braza Veículos Uberlândia
-            </p>
             <h1 className="font-display text-[clamp(3.25rem,8vw,6.7rem)] font-bold uppercase leading-[0.94] tracking-[-0.025em] text-white">
               Sua próxima
               <span className="mt-1 block pb-2 text-braza">conquista</span>
               <span className="mt-2 block text-white">começa aqui.</span>
             </h1>
-            <p className="mt-7 max-w-xl text-base leading-relaxed text-white/62 sm:text-lg">
+            <p className="mt-7 max-w-xl text-base leading-relaxed text-white sm:text-lg">
               Escolha seu próximo carro ou sua próxima moto com procedência, atendimento direto e
               uma negociação feita para você.
             </p>
-            <p className="mt-3 max-w-2xl text-xs leading-relaxed text-white/50 sm:text-sm">
+            <p className="mt-3 max-w-2xl text-base leading-relaxed text-white/50 sm:text-lg">
               Av. João pinheiro, 3123 - Uberlândia - MG · Segunda à sábado, das 08:00 às 18:00
             </p>
 
@@ -110,7 +107,7 @@ function Home() {
               />
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 rounded-xl bg-secondary px-5 py-3 text-sm font-bold text-white transition hover:brightness-110 sm:px-7"
+                className="inline-flex items-center gap-2 rounded-xl bg-cta-blue px-5 py-3 text-sm font-bold text-white transition hover:brightness-110 sm:px-7"
               >
                 Buscar <ArrowRight className="h-4 w-4" />
               </button>
@@ -177,11 +174,11 @@ function Home() {
       <section className="mx-auto max-w-7xl px-4 pb-20 pt-24 sm:px-6">
         <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.24em]">
+            <p className="text-sm font-bold uppercase leading-relaxed tracking-[0.24em] sm:text-base">
               <span className="text-white">Seleção</span>{" "}
               <span className="text-secondary">Braza</span>
             </p>
-            <h2 className="mt-2 font-oswald text-4xl font-bold uppercase tracking-tight text-white sm:text-5xl">
+            <h2 className="mt-3 font-oswald text-4xl font-bold uppercase tracking-tight text-white sm:text-5xl">
               Últimas novidades
             </h2>
           </div>
@@ -207,7 +204,7 @@ function Home() {
           <div className="mt-10 text-center">
             <Link
               to="/estoque"
-              className="braza-glow inline-flex items-center gap-2 rounded-full bg-braza px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-white transition hover:-translate-y-0.5 hover:brightness-110"
+              className="inline-flex items-center gap-2 rounded-full bg-cta-blue px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-white transition hover:-translate-y-0.5 hover:brightness-110"
             >
               Ver estoque completo <ArrowRight className="h-4 w-4" />
             </Link>
@@ -242,7 +239,7 @@ function Home() {
               src={SITE.mapEmbed}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="h-[380px] w-full border-0 grayscale-[0.7] contrast-125"
+              className="h-[380px] w-full border-0"
             />
           </div>
         </div>

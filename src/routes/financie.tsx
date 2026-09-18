@@ -115,7 +115,7 @@ function Financie() {
             href={whatsappLink("Olá! Gostaria de simular um financiamento na Braza Veículos.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="braza-glow mt-7 inline-flex items-center gap-2 rounded-full bg-braza px-7 py-3.5 text-sm font-bold uppercase tracking-wider text-white transition hover:brightness-110"
+            className="mt-7 inline-flex items-center gap-2 rounded-full bg-cta-blue px-7 py-3.5 text-sm font-bold uppercase tracking-wider text-white transition hover:brightness-110"
           >
             <MessageCircle className="h-4 w-4" /> Simular pelo WhatsApp
           </a>

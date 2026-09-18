@@ -252,7 +252,7 @@ function Detalhe() {
         </p>
         <Link
           to="/estoque"
-          className="mt-6 inline-block rounded-full bg-braza px-6 py-3 text-sm font-semibold text-white"
+          className="mt-6 inline-block rounded-full bg-cta-blue px-6 py-3 text-sm font-semibold text-white"
         >
           Ver estoque
         </Link>
@@ -446,7 +446,7 @@ function Detalhe() {
             <span className="text-white">{anoModelo}</span>
           </h1>
           {versao && <p className="mt-1 text-lg text-white/85">{versao}</p>}
-          <p className="text-braza mt-10 inline-block font-inter text-2xl font-bold tracking-wide sm:text-3xl">
+          <p className="mt-10 inline-block font-inter text-2xl font-bold tracking-wide text-white sm:text-3xl">
             {brl(carro.preco)}
           </p>
 
@@ -470,7 +470,7 @@ function Detalhe() {
             onClick={() => void trackAnalyticsEvent("whatsapp_click", carro.id)}
             target="_blank"
             rel="noopener noreferrer"
-            className="braza-glow mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-braza px-6 text-base font-semibold text-black shadow-lg transition hover:brightness-110"
+            className="mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-cta-blue px-6 text-base font-semibold text-white shadow-lg transition hover:brightness-110"
           >
             <MessageCircle className="h-5 w-5" /> Tenho interesse
           </a>
