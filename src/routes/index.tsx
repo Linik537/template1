@@ -72,7 +72,7 @@ function Home() {
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-center opacity-85 sm:opacity-95"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#08090c_0%,rgba(8,9,12,0.75)_60%,transparent_100%)]" />
+        <div className="hero-side-shadow absolute inset-0" />
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background/80 to-transparent" />
 
         <div className="relative mx-auto flex min-h-[670px] max-w-7xl items-center px-4 py-20 sm:px-6 lg:py-24">

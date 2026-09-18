@@ -208,6 +208,17 @@ img {
   background-size: 42px 42px;
 }
 
+.hero-side-shadow {
+  background: linear-gradient(
+    90deg,
+    #08090c 0%,
+    rgb(8 9 12 / 96%) 35%,
+    rgb(8 9 12 / 90%) 55%,
+    rgb(8 9 12 / 58%) 80%,
+    rgb(8 9 12 / 8%) 100%
+  );
+}
+
 .braza-panel {
   background:
     linear-gradient(145deg, oklch(0.22 0.025 265 / 0.96), oklch(0.155 0.012 265 / 0.98)) padding-box,
