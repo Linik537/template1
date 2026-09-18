@@ -70,7 +70,7 @@ function Home() {
           height={768}
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover object-center opacity-85 sm:opacity-95 lg:-translate-x-[4%] lg:scale-105"
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-85 sm:opacity-95"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#08090c] via-[#08090c]/75 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background/80 to-transparent" />

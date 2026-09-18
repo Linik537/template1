@@ -35,66 +35,73 @@ function Sobre() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getAutoDealerSchema()) }}
       />
 
-      <section className="braza-grid relative border-b border-white/8 bg-[#0a0c10]">
-        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1fr_0.75fr] lg:py-28">
+      <section className="border-b border-white/10 bg-[#0a0c10]">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:py-28">
           <div>
-            <p className="pl-0.5 text-xs font-bold uppercase tracking-[0.25em] text-primary">
-              Nossa identidade
+            <p className="border-l-2 border-primary pl-4 text-xs font-bold uppercase tracking-[0.25em] text-white/70">
+              Sobre a Braza
             </p>
-            <h1 className="mt-4 max-w-3xl font-oswald text-5xl font-bold uppercase leading-[0.95] text-white sm:text-7xl">
-              Mais caminhos.
-              <br />
-              <span className="text-braza">Mais liberdade.</span>
+            <h1 className="mt-7 max-w-3xl font-oswald text-[clamp(3rem,6vw,5.5rem)] font-bold uppercase leading-[0.98] text-white">
+              Seu próximo caminho começa com confiança.
             </h1>
-            <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">
-              A Braza Veículos nasceu em Uberlândia para conectar pessoas às melhores oportunidades
-              sobre duas ou quatro rodas. Aqui, cada negociação é conduzida com clareza, atenção e
-              respeito pelo seu momento.
+            <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg">
+              Somos uma concessionária de carros e motos em Uberlândia. Reunimos boas oportunidades
+              e atendimento próximo para que você escolha com segurança, sem complicar a jornada.
+            </p>
+            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+              Duas ou quatro rodas. A escolha é sua.
             </p>
           </div>
           <img
             src={logo}
             alt={`Logo ${SITE.name}`}
-            className="mx-auto aspect-square w-full max-w-md object-contain lg:max-w-lg"
+            className="mx-auto aspect-square w-full max-w-[320px] object-contain sm:max-w-[400px] lg:max-w-[480px]"
           />
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-        <div className="grid gap-6 md:grid-cols-3">
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
+        <div className="mb-8 max-w-2xl">
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-primary">
+            O jeito Braza
+          </p>
+          <h2 className="mt-3 font-oswald text-3xl font-bold uppercase text-white sm:text-4xl">
+            Clareza na escolha. Liberdade para seguir.
+          </h2>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
           {[
             {
               icon: ShieldCheck,
-              title: "Confiança em primeiro lugar",
+              number: "01",
+              title: "Negociação transparente",
               text: "Informações claras e acompanhamento próximo para você decidir com segurança.",
-              tone: "red",
             },
             {
               icon: CarFront,
-              title: "Quatro rodas",
-              text: "Carros selecionados para diferentes rotinas, famílias e conquistas.",
-              tone: "blue",
+              number: "02",
+              title: "Carros para sua rotina",
+              text: "Modelos selecionados para diferentes trajetos, famílias e planos.",
             },
             {
               icon: Bike,
-              title: "Duas rodas",
-              text: "Motos para mobilidade, trabalho, lazer e aquela sensação de liberdade.",
-              tone: "red",
+              number: "03",
+              title: "Motos para ir além",
+              text: "Opções para mobilidade, trabalho, lazer e novos destinos.",
             },
           ].map((item) => (
             <article
-              key={item.title}
-              className="braza-panel rounded-2xl p-7 transition duration-300 hover:-translate-y-1"
+              key={item.number}
+              className="flex h-full flex-col rounded-lg border border-white/12 bg-[#10141b] p-6 transition-colors hover:border-white/30 sm:p-7"
             >
-              <span
-                className={`flex h-12 w-12 items-center justify-center rounded-xl ${item.tone === "blue" ? "bg-secondary/12 text-secondary" : "bg-primary/12 text-primary"}`}
-              >
-                <item.icon className="h-6 w-6" />
-              </span>
-              <h2 className="mt-5 font-oswald text-xl font-bold uppercase tracking-wide text-white">
+              <div className="flex items-start justify-between">
+                <item.icon className="h-7 w-7 text-white" aria-hidden />
+                <span className="font-oswald text-lg font-bold text-primary">{item.number}</span>
+              </div>
+              <h3 className="mt-9 font-oswald text-2xl font-bold uppercase leading-tight text-white">
                 {item.title}
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-white/50">{item.text}</p>
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-white/55">{item.text}</p>
             </article>
           ))}
         </div>

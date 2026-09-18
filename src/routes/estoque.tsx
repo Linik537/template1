@@ -102,9 +102,9 @@ function Estoque() {
     navigate({ search: (prev) => ({ ...prev, ...patch }) });
 
   const selectCls =
-    "w-full rounded-md border border-white/30 bg-card px-3 py-2 text-sm text-foreground outline-none focus:border-white";
+    "w-full rounded-sm border border-white/30 bg-card px-3 py-2 text-sm text-foreground outline-none focus:border-white";
   const orderSelectCls =
-    "rounded-md border border-white/30 bg-card px-3 py-2 text-sm text-foreground outline-none focus:border-white w-full sm:w-auto sm:min-w-[190px]";
+    "rounded-sm border border-white/30 bg-card px-3 py-2 text-sm text-foreground outline-none focus:border-white w-full sm:w-auto sm:min-w-[190px]";
 
   return (
     <div className="relative z-30 bg-background">
@@ -121,7 +121,7 @@ function Estoque() {
           </p>
 
           <form
-            className="mt-8 flex max-w-4xl overflow-hidden rounded-2xl border border-white/30 bg-card p-1.5"
+            className="mt-8 flex max-w-4xl overflow-hidden rounded-md border border-white/30 bg-card p-1.5"
             onSubmit={(e) => {
               e.preventDefault();
               setFilter({ q: termo || undefined });
@@ -132,11 +132,11 @@ function Estoque() {
               onChange={(e) => setTermo(e.target.value)}
               placeholder="Pesquisar marca, modelo ou ano..."
               aria-label="Pesquisar no estoque"
-              className="flex-1 bg-transparent px-4 py-3 text-sm text-white outline-none placeholder:text-white/35"
+              className="min-w-0 flex-1 bg-transparent px-4 py-3 text-sm text-white outline-none placeholder:text-white/35"
             />
             <button
               type="submit"
-              className="rounded-xl bg-cta-blue px-6 text-white transition hover:brightness-110"
+              className="rounded-sm bg-cta-blue px-6 text-white transition hover:brightness-110"
               aria-label="Buscar"
             >
               <Search className="h-4 w-4" />
@@ -147,12 +147,12 @@ function Estoque() {
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
         <div className="mt-8 grid gap-8 lg:grid-cols-[260px_1fr]">
-          <aside className="h-fit space-y-5 rounded-2xl border border-white/30 bg-card p-5 lg:sticky lg:top-28">
+          <aside className="h-fit space-y-5 rounded-md border border-white/30 bg-card p-5 lg:sticky lg:top-28">
             <h2 className="text-sm font-semibold uppercase tracking-wider text-white">Filtros</h2>
             <label className="block text-xs text-muted-foreground">
               Marca
               <select
-                className={selectCls}
+                className={`${selectCls} mt-2`}
                 value={search.marca ?? ""}
                 onChange={(e) => setFilter({ marca: e.target.value || undefined })}
               >
@@ -241,7 +241,7 @@ function Estoque() {
                 setTermo("");
                 navigate({ search: {} });
               }}
-              className="w-full rounded-md border border-white/30 px-3 py-2 text-xs text-muted-foreground hover:border-white hover:text-white"
+              className="w-full rounded-sm border border-white/30 px-3 py-2 text-xs text-muted-foreground hover:border-white hover:text-white"
             >
               Limpar filtros
             </button>
